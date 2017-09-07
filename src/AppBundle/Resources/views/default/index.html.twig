@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/css/wheelnav.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% include '@App/includes/wheelnav.html.twig' %}
+{% endblock %}
+{% block maincontent %}
+    <p class="typing-animation">{{ 'Bienvenue sur le portfolio de Nicolas'|trans }}</p>
+
+    <div id='piemenu' data-wheelnav
+         data-wheelnav-slicepath='MenuSlice'
+         data-wheelnav-spreader data-wheelnav-spreaderpath='HolderSpreader'
+         data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
+         data-wheelnav-rotateoff
+         data-wheelnav-navangle='67.5'
+         data-wheelnav-titleheight='40'
+         data-wheelnav-cssmode
+         data-wheelnav-init>
+        <div data-wheelnav-navitemicon='check' onmouseup='alert("Place your logic here.");'></div>
+        <div data-wheelnav-navitemimg='http://pmg.softwaretailoring.net/img/pmg_favicon.png'
+             onmouseup='alert("Place your logic here.");'></div>
+        <div data-wheelnav-navitemicon='checkbox' onmouseup='alert("Place your logic here.");'></div>
+        <div data-wheelnav-navitemicon='checked' onmouseup='alert("Place your logic here.");'></div>
+    </div>
+{% endblock %}

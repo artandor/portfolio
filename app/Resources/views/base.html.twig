@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="{{ author }}">
+    <title>{% block title %}{% endblock %} - NM</title>
+    {% block stylesheets %}
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<header>
+
+</header>
+<div class="container">
+    {% block maincontent %}{% endblock %}
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <blockquote class="blockquote blockquote-reverse">
+            <footer class="blockquote-footer">{{ 'Développé avec Symfony'|trans }} {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}
+                <cite title="Source Title"> {{ 'par'|trans }}
+                    Nicolas MYLLE</cite></footer>
+        </blockquote>
+    </div>
+    {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="{{ asset('assets/js/angular/appAngular.js') }}"></script>
+        <script src="{{ asset('assets/js/angular/project-list.component.js') }}"></script>
+
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
+    {% endblock %}
+</footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block maincontent %}
+
+    <div ng-app="projectApp">
+        <div class="well">
+            <h3>Here is a little shitty form with angular, just to see if i'm totally garbage or just
+                trash.</h3>
+            <p>Input something in the input box:</p>
+            <p>Name: <input ng-model="name"></p>
+            <p ng-bind="name"></p>
+        </div>
+        <div class="well">
+            <h3>Here are all the projects i plan to do :D</h3>
+            <project-list></project-list>
+        </div>
+    </div>
+{% endblock %}
