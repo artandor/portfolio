@@ -12,21 +12,80 @@
     {% include '@App/includes/wheelnav.html.twig' %}
 {% endblock %}
 {% block maincontent %}
-    <h1 class="typing-animation">{{ 'Bienvenue sur le portfolio de Nicolas'|trans }}</h1>
-
-    <div id='piemenu' data-wheelnav
-         data-wheelnav-slicepath='MenuSlice'
-         data-wheelnav-spreader data-wheelnav-spreaderpath='HolderSpreader'
-         data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
-         data-wheelnav-rotateoff
-         data-wheelnav-navangle='67.5'
-         data-wheelnav-titleheight='40'
-         data-wheelnav-cssmode
-         data-wheelnav-init>
-        <div data-wheelnav-navitemicon='check' onmouseup='alert("Place your logic here.");'></div>
-        <div data-wheelnav-navitemimg='http://pmg.softwaretailoring.net/img/pmg_favicon.png'
-             onmouseup='alert("Place your logic here.");'></div>
-        <div data-wheelnav-navitemicon='checkbox' onmouseup='alert("Place your logic here.");'></div>
-        <div data-wheelnav-navitemicon='checked' onmouseup='alert("Place your logic here.");'></div>
+    <div class="col-xs-12">
+        <h1 class="typing-animation">{{ 'Bienvenue sur le portfolio de Nicolas'|trans }}</h1>
     </div>
+
+    <div class="col-xs-5">
+        <div id='piemenu' data-wheelnav
+             data-wheelnav-slicepath='MenuSlice'
+             data-wheelnav-spreader data-wheelnav-spreaderpath='HolderSpreader'
+             data-wheelnav-marker data-wheelnav-markerpath='PieLineMarker'
+             data-wheelnav-rotateoff
+             data-wheelnav-navangle='67.5'
+             data-wheelnav-titleheight='40'
+             data-wheelnav-cssmode
+             data-wheelnav-init>
+
+            <div data-wheelnav-navitemicon='customer' onmouseup='collapseDescription("#aboutme");'></div>
+            <div data-wheelnav-navitemicon='pallete' onmouseup='jQuery("#skills").collapse("toggle");'></div>
+            <div data-wheelnav-navitemicon='roadmap' onmouseup='alert("Place your logic here.");'></div>
+            <div data-wheelnav-navitemicon='mail' onmouseup='alert("Contact me");'></div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-xs-offset-1" id="description">
+        <div class="collapse in" id="aboutme">
+            <div class="well">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae diam et libero lobortis
+                    pellentesque. Maecenas interdum metus vitae purus accumsan, consectetur tempus erat eleifend. Etiam
+                    ultrices leo ultrices, maximus sapien et, porta lacus. Cras convallis nisi non purus viverra
+                    accumsan.
+                    Curabitur luctus ligula ac nunc dictum rhoncus. Vivamus ipsum elit, hendrerit ac fringilla ac,
+                    tincidunt
+                    non leo. Mauris in sagittis urna.
+                </p>
+
+                <p>
+                    Aenean erat metus, facilisis nec convallis vel, consectetur sed lacus. Suspendisse non pharetra
+                    odio, eu
+                    consectetur ligula. In cursus aliquam urna vel vulputate. Nunc iaculis fermentum tortor, dictum
+                    fermentum erat ultricies lacinia. Vestibulum et justo non urna maximus condimentum. Donec in metus
+                    ut
+                    eros porttitor aliquet eget eu ligula. Curabitur euismod, enim efficitur viverra convallis, sapien
+                    nisi
+                    vulputate sem, eu blandit mi orci non neque. Vivamus vitae dolor ipsum. Duis dignissim consectetur
+                    accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                    himenaeos.
+                </p>
+            </div>
+        </div>
+        <div class="collapse" id="skills">
+            <div class="well">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae diam et libero lobortis
+                    pellentesque. Maecenas interdum metus vitae purus accumsan, consectetur tempus erat eleifend. Etiam
+                    ultrices leo ultrices, maximus sapien et, porta lacus. Cras convallis nisi non purus viverra
+                    accumsan.
+                    Curabitur luctus ligula ac nunc dictum rhoncus. Vivamus ipsum elit, hendrerit ac fringilla ac,
+                    tincidunt
+                    non leo. Mauris in sagittis urna.
+                </p>
+
+                <p>
+                    Aenean erat metus, facilisis nec convallis vel, consectetur sed lacus. Suspendisse non pharetra
+                    odio, eu
+                    consectetur ligula. In cursus aliquam urna vel vulputate. Nunc iaculis fermentum tortor, dictum
+                    fermentum erat ultricies lacinia. Vestibulum et justo non urna maximus condimentum. Donec in metus
+                    ut
+                    eros porttitor aliquet eget eu ligula. Curabitur euismod, enim efficitur viverra convallis, sapien
+                    nisi
+                    vulputate sem, eu blandit mi orci non neque. Vivamus vitae dolor ipsum. Duis dignissim consectetur
+                    accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                    himenaeos.
+                </p>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

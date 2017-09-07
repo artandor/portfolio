@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="author" content="{{ author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} - NM</title>
     {% block stylesheets %}
         <!-- Latest compiled and minified Bootstrap CSS -->
@@ -30,6 +31,15 @@
         </blockquote>
     </div>
     {% block javascripts %}
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript Bootstrap -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+
+        <!-- Angular JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="{{ asset('assets/js/angular/appAngular.js') }}"></script>
         <script src="{{ asset('assets/js/angular/project-list.component.js') }}"></script>
