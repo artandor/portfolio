@@ -1,6 +1,6 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ 'Home'|trans }}{% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
@@ -75,14 +75,18 @@
         </div>
         <div class="collapse" id="skills">
             <div class="well">
-                <blockquote class="blockquote blockquote-reverse">
-                    Tout ce qui est petit est marron.
-                    <footer class="blockquote-footer">
-                        <cite title="Source Title">
-                            Nicolas MYLLE
-                        </cite>
-                    </footer>
-                </blockquote>
+                <p>
+                    {% trans %}
+                    Il est, je pense, plus interressant de vous montrer mes compétences graphiquement via une Roadmap
+                    plutot que via une longue liste.
+                    <br/>
+                    Pour se faire je vais m'inspirer du repo github que vous trouverez
+                    {% endtrans %} <a
+                            href="https://github.com/kamranahmedse/developer-roadmap"
+                            title="Repository Github Roadmap kamranahmedse">{{ 'ici'|trans }}</a>.
+
+                    <a href="" title="{{ 'my skills'|trans }}">{{ 'Check my skills'|trans }}</a>
+                </p>
             </div>
         </div>
         <div class="collapse" id="projects">
@@ -114,13 +118,15 @@
                 </div>
                 <h3>{{ 'ou sur les Réseaux Sociaux'|trans }}</h3>
                 <div class="col-xs-12">
-                    <h4><img class="icon" src="{{ asset('assets/images/LinkedIn-Icon.png') }}" alt="github icon"> Linkedin</h4>
+                    <h4><img class="icon" src="{{ asset('assets/images/LinkedIn-Icon.png') }}" alt="github icon">
+                        Linkedin</h4>
                     <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
                     <script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/nicolas-mylle-98b8a5118"
                             data-format="inline" data-related="false"></script>
                 </div>
                 <div class="col-xs-12 ">
-                    <h4><img class="icon" src="{{ asset('assets/images/github-logo.png') }}" alt="github icon"> Github</h4>
+                    <h4><img class="icon" src="{{ asset('assets/images/github-logo.png') }}" alt="github icon"> Github
+                    </h4>
                     <div class="github-widget text-center" data-username="artandor"></div>
                     <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
                 </div>

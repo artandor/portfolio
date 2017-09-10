@@ -1,9 +1,12 @@
 body {
     font: 18px/1.5 sans-serif;
+    background-image: url('../images/Code-Background.jpg');
+    background-size: auto;
 }
 
 .container{
     background: #c7c7c7;
+    opacity: 0.9;
 }
 
 .footer {

@@ -49,6 +49,13 @@ class DefaultController extends Controller
         return $this->render('@App/default/projects.html.twig');
     }
 
+    /**
+     * @Route("/skills", name="skills")
+     */
+    public function skillsAction(Request $request)
+    {
+        return $this->render('@App/default/skills.html.twig');
+    }
 
     /**
      * @Route("/testangular", name="testAngular")
