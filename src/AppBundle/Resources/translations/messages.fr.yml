@@ -1,3 +1,14 @@
 Bienvenue sur le portfolio de Nicolas: Bienvenue sur le portfolio de Nicolas
 Développé avec Symfony: Développé avec Symfony
 par: par
+Contactez moi ici: Contactez moi ici
+ou sur les Réseaux Sociaux: ou sur les Réseaux Sociaux
+Message registred. I'll answer as soon as possible.: Message enregistré. Je répondrais dès que possible.
+
+# Form translations
+##   ContactForm
+Mail: E-Mail
+Name: Nom
+First name: Prénom
+Phone number: N° de téléphone
+Submit: Valider

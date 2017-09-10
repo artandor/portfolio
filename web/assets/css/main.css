@@ -1,6 +1,9 @@
 body {
-    background: #f5e759;
     font: 18px/1.5 sans-serif;
+}
+
+.container{
+    background: #c7c7c7;
 }
 
 .footer {
@@ -8,7 +11,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: #f50b2a;
+    background-color: #c7c7c7;
 }
 
 h1, h2 {
@@ -27,10 +30,11 @@ h2 {
 
 p {
     margin: 0 0 1em 0;
+    text-align: justify;
 }
 
 a {
-    color: #0000F0;
+    color: #251871;
 }
 
 a:hover {
@@ -38,11 +42,19 @@ a:hover {
 }
 
 .well{
-    /*max-height: 500px;
-    overflow: scroll;*/
-    font-size: 25px;
+    max-height: 600px;
+    overflow-y: scroll;
 }
 
+.github-widget{
+    margin: auto;
+}
+
+.icon{
+    max-width: 1em;
+    max-height: 1em;
+    vertical-align: text-top;
+}
 /** START Typing animation */
 
 .typing-animation {

@@ -2,8 +2,11 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Contact;
+use AppBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -11,11 +14,41 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     * @throws \InvalidArgumentException
+     * @throws \LogicException
+     * @throws \RuntimeException
      */
     public function indexAction(Request $request)
     {
-        return $this->render('@App/default/index.html.twig');
+        $contact = new Contact();
+        $formContact = $this->createForm(ContactType::class, $contact);
+
+        $formContact->handleRequest($request);
+        if ($formContact->isSubmitted() && $formContact->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($contact);
+            $em->flush();
+
+            $session = new Session();
+            $session->getFlashBag()->add('successSubmit', 'Message registred. I\'ll answer as soon as possible.');
+            return $this->redirectToRoute('homepage');
+        }
+        return $this->render(
+            '@App/default/index.html.twig',
+            array(
+                'formContact' => $formContact->createView()
+            )
+        );
     }
+
+    /**
+     * @Route("/projects", name="projectsList")
+     */
+    public function projectListAction(Request $request)
+    {
+        return $this->render('@App/default/projects.html.twig');
+    }
+
 
     /**
      * @Route("/testangular", name="testAngular")
